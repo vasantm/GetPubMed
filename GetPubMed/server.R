@@ -31,8 +31,8 @@ and click on Get Abstracts  to display results here",'</span>','</h3>','</center
   })
   search_string<-eventReactive(input$goButton, {input$query})
   output$searchresult <- renderPrint({
-    d.past<-input$date1
-    d.current<-input$date2
+    d.past<-input$dates[1]
+    d.current<-input$dates[2]
 
     search_query <- EUtilsSummary(search_string(), type = "esearch", db = "pubmed",
                          datetype='pdat', mindate = d.past, maxdate = d.current,
